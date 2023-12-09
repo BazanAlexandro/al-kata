@@ -11,6 +11,15 @@ public class GildedRose
         _items = items;
     }
 
+    /**
+     * 1. Create strategies
+     * 2. Iterate ovr them
+     * 3. Strategy should have method getQuality(quantity, sellIn) and property isLegendary
+     * 4. How to find? And how to tie isLegendary property?
+     * 
+     * How to glue strategies and items?
+     * How to glue items and isLegendary
+     */
     public void UpdateQuality()
     {
         // iterations 
