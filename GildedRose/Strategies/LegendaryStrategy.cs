@@ -1,7 +1,6 @@
 ﻿using GildedRoseKata;
-using Strategies;
 
-namespace GildedRose.Strategies
+namespace Strategies
 {
 	public class LegendaryStrategy: DefaultStrategy
 	{

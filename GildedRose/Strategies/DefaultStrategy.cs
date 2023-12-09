@@ -13,7 +13,14 @@ namespace Strategies
 
 		public void UpdateQuality()
 		{
-
+			if (item.SellIn >= 0)
+			{
+				item.Quality -= 1;
+			}
+			else
+			{
+				item.Quality -= 2;
+			}
 		}
 
 		protected virtual int GetQuality()
@@ -22,7 +29,8 @@ namespace Strategies
 		}
 
 		public virtual void UpdateSellIn()
-		{}
+		{
+			item.SellIn -= 1;
+		}
 	}
 }
-
