@@ -13,20 +13,25 @@ namespace Strategies
 
 		public void UpdateQuality()
 		{
-			if (item.SellIn >= 0)
+			var newQuality = GetQuality();
+
+			if (newQuality >= 0 && newQuality <= 50)
 			{
-				item.Quality -= 1;
-			}
-			else
-			{
-				item.Quality -= 2;
+				item.Quality = newQuality;
 			}
 		}
 
 		protected virtual int GetQuality()
 		{
-			return 0;
-		}
+            if (item.SellIn >= 0)
+            {
+                return item.Quality - 1;
+            }
+            else
+            {
+                return item.Quality - 2;
+            }
+        }
 
 		public virtual void UpdateSellIn()
 		{
