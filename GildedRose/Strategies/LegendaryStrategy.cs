@@ -7,10 +7,9 @@ namespace Strategies
         public LegendaryStrategy(Item item) : base(item)
         { }
 
-        protected override int GetQualityDiff()
+        public override void UpdateQuality()
         {
-            // quality item does not change
-            return 0;
+            // Quality does not change
         }
 
         public override void UpdateSellIn() {

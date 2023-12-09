@@ -5,6 +5,7 @@ namespace GildedRoseKata;
 
 public class GildedRose
 {
+    private readonly IList<Item> _items;
     private readonly IList<IStrategy> _strategies;
 
     public GildedRose(IList<Item> items)
@@ -13,26 +14,14 @@ public class GildedRose
 
         foreach(var item in items)
         {
-            IStrategy strategy;
-            switch(item.Name)
+            IStrategy strategy = item.Name switch
             {
-                case "Sulfuras, Hand of Ragnaros":
-                    strategy = new LegendaryStrategy(item);
-                    break;
-                case "Backstage passes to a TAFKAL80ETC concert":
-                    strategy = new BackstageStrategy(item);
-                    break;
-                case "Aged Brie":
-                    strategy = new AgingStrategy(item);
-                    break;
-                case "Conjured Mana Cake":
-                    strategy = new ConjuredStrategy(item);
-                    break;
-                default:
-                    strategy = new DefaultStrategy(item);
-                    break;
-            }
-
+                "Sulfuras, Hand of Ragnaros" => new LegendaryStrategy(item),
+                "Backstage passes to a TAFKAL80ETC concert" => new BackstageStrategy(item),
+                "Aged Brie" => new AgingStrategy(item),
+                "Conjured Mana Cake" => new ConjuredStrategy(item),
+                _ => new DefaultStrategy(item),
+            };
             _strategies.Add(strategy);
         }
     }

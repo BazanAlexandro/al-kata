@@ -9,9 +9,9 @@ namespace Strategies
 
         protected override int GetQualityDiff()
         {
-            if (item.SellIn < 0)
+            if (item.SellIn <= 0)
             {
-                return 0;
+                return -item.Quality;
             }
             if (item.SellIn <= 5)
             {

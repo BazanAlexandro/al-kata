@@ -9,7 +9,7 @@ namespace Strategies
 
         protected override int GetQualityDiff()
         {
-            return 1;
+            return -base.GetQualityDiff();
         }
     }
 }
