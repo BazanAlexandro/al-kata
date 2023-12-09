@@ -23,7 +23,8 @@ namespace Strategies
 			else if (newQuality <= 0)
 			{
 				item.Quality = 0;
-			} else
+			}
+			else
 			{
 				item.Quality = newQuality;
 			}
