@@ -7,9 +7,9 @@ namespace Strategies
 		public AgingStrategy(Item item): base(item)
 		{}
 
-        protected override int GetQuality()
+        protected override int GetQualityDiff()
         {
-            return item.Quality + 1;
+            return 1;
         }
     }
 }

@@ -25,6 +25,9 @@ public class GildedRose
                 case "Aged Brie":
                     strategy = new AgingStrategy(item);
                     break;
+                case "Conjured Mana Cake":
+                    strategy = new ConjuredStrategy(item);
+                    break;
                 default:
                     strategy = new DefaultStrategy(item);
                     break;

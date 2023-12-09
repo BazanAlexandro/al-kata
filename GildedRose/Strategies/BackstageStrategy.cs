@@ -7,7 +7,7 @@ namespace Strategies
 		public BackstageStrategy(Item item): base(item)
 		{}
 
-        protected override int GetQuality()
+        protected override int GetQualityDiff()
         {
             if (item.SellIn < 0)
             {
@@ -15,14 +15,14 @@ namespace Strategies
             }
             if (item.SellIn <= 5)
             {
-                return item.Quality + 3;
+                return 3;
             }
             if (item.SellIn <= 10)
             {
-                return item.Quality + 2;
+                return 2;
             }
 
-            return item.Quality + 1;
+            return 1;
         }
     }
 }
