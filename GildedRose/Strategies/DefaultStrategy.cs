@@ -2,7 +2,7 @@
 
 namespace Strategies
 {
-	public class DefaultStrategy
+	public class DefaultStrategy: IStrategy
 	{
 		protected Item item;
 

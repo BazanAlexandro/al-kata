@@ -9,7 +9,7 @@ namespace Strategies
 
         protected override int GetQuality()
         {
-            return item.Quality += 1;
+            return item.Quality + 1;
         }
     }
 }
